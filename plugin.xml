@@ -34,10 +34,7 @@
         <source-file src="src/android/libs/alipaySdk-20170725.jar" target-dir="libs"/>
 
         <source-file src="src/android/Alipay.java" target-dir="src/alipay/Alipay"/>
-        <source-file src="src/android/Base64.java" target-dir="src/alipay/Alipay"/>
         <source-file src="src/android/PayResult.java" target-dir="src/alipay/Alipay"/>
-        <source-file src="src/android/SignUtils.java" target-dir="src/alipay/Alipay"/>
-        <source-file src="src/android/util/OrderInfoUtil2_0.java" target-dir="src/alipay/Alipay"/>
     </platform>
 
     <platform name="ios">
