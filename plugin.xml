@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="alipay" version="true" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Alipay</name>
+    <js-module name="Alipay" src="www/Alipay.js">
+        <clobbers target="cordova.plugins.Alipay"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="Alipay">
+                <param name="android-package" value="alipay.Alipay"/>
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"/>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <!-- alipay sdk begin -->
+            <activity android:name="com.alipay.sdk.app.H5PayActivity"
+                      android:configChanges="orientation|keyboardHidden|navigation"
+                      android:exported="false" android:screenOrientation="behind"
+                      android:windowSoftInputMode="adjustResize|stateHidden">
+            </activity>
+            <!-- alipay sdk end -->
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </config-file>
+
+        <source-file src="src/android/libs/alipaySdk-20170725.jar" target-dir="libs"/>
+
+        <source-file src="src/android/Alipay.java" target-dir="src/alipay/Alipay"/>
+        <source-file src="src/android/Base64.java" target-dir="src/alipay/Alipay"/>
+        <source-file src="src/android/PayResult.java" target-dir="src/alipay/Alipay"/>
+        <source-file src="src/android/SignUtils.java" target-dir="src/alipay/Alipay"/>
+        <source-file src="src/android/util/OrderInfoUtil2_0.java" target-dir="src/alipay/Alipay"/>
+    </platform>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="Alipay">
+                <param name="ios-package" value="Alipay"/>
+            </feature>
+        </config-file>
+        <source-file src="src/ios/Alipay.m"/>
+    </platform>
+</plugin>

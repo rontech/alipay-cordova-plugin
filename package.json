@@ -1,0 +1,27 @@
+{
+  "name": "alipay",
+  "version": "1.0.0",
+  "description": "cordova alipay plugin",
+  "cordova": {
+    "id": "alipay",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rontech/alipay-cordova-plugin.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "rontech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rontech/alipay-cordova-plugin/issues"
+  },
+  "homepage": "https://github.com/rontech/alipay-cordova-plugin#readme"
+}
