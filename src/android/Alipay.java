@@ -1,4 +1,4 @@
-package alipay;
+package com.taiemao.alipay;
 
 import android.text.TextUtils;
 import android.util.Log;

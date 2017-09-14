@@ -9,12 +9,12 @@
 
 @property(nonatomic,strong)NSString *currentCallbackId;
 
-- (void)alipay:(CDVInvokedUrlCommand*)command;
+- (void)pay:(CDVInvokedUrlCommand*)command;
 @end
 
 @implementation Alipay
 
-- (void)alipay:(CDVInvokedUrlCommand*)command
+- (void)pay:(CDVInvokedUrlCommand*)command
 {
   self.currentCallbackId = command.callbackId;
   NSString *signedString = [[command argumentAtIndex:0] objectForKey:@"orderInfo"]; 

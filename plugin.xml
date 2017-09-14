@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="alipay" version="true" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+<plugin id="cordova-plugin-alipay" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>Alipay</name>
+    <name>cordova-plugin-alipay</name>
     <js-module name="Alipay" src="www/Alipay.js">
         <clobbers target="cordova.plugins.Alipay"/>
     </js-module>
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="Alipay">
-                <param name="android-package" value="alipay.Alipay"/>
+                <param name="android-package" value="com.taiemao.alipay.Alipay"/>
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml"/>
@@ -33,8 +33,8 @@
 
         <source-file src="src/android/libs/alipaySdk-20170725.jar" target-dir="libs"/>
 
-        <source-file src="src/android/Alipay.java" target-dir="src/alipay/Alipay"/>
-        <source-file src="src/android/PayResult.java" target-dir="src/alipay/Alipay"/>
+        <source-file src="src/android/Alipay.java" target-dir="src/com/taiemao/alipay"/>
+        <source-file src="src/android/PayResult.java" target-dir="src/com/taiemao/alipay"/>
     </platform>
 
     <platform name="ios">

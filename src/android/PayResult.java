@@ -1,4 +1,4 @@
-package alipay;
+package com.taiemao.alipay;
 
 import java.util.HashMap;
 import java.util.Map;
