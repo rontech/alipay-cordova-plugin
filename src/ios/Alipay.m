@@ -20,22 +20,13 @@
   NSString *signedString = [[command argumentAtIndex:0] objectForKey:@"orderInfo"]; 
   NSString *appScheme = @"taiemao";
 
-  NSLog(@"--------------------------------"); 
-  NSLog(@"--------"); 
-  NSLog(@"sign = %@",signedString); 
-  NSLog(@"app = %@",appScheme); 
-
-      NSLog(@"9999999999999999");
       [[AlipaySDK defaultService] payOrder:signedString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
   
-      NSLog(@"=============================="); 
-      NSLog(@"reslut = %@",resultDic); 
       if ([[resultDic objectForKey:@"resultStatus"]  isEqual: @"9000"]) {
         [self successWithCallbackID:self.currentCallbackId messageAsDictionary:resultDic];
       } else {
         [self failWithCallbackID:self.currentCallbackId messageAsDictionary:resultDic];
       }
-      NSLog(@"reslut = %@",resultDic);
     }];
 
 }

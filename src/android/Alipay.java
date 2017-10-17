@@ -41,8 +41,6 @@ public class Alipay extends CordovaPlugin {
 
     private void pay(final String orderInfo, final CallbackContext callbackContext) {
 
-        Log.i("Alipay:orderInfo",orderInfo);
-
         cordova.getThreadPool().execute(new Runnable() {
             @Override
             public void run() {
@@ -51,13 +49,6 @@ public class Alipay extends CordovaPlugin {
                 // 调用支付接口，获取支付结果
 
                 Map<String, String> result = alipay.payV2(orderInfo, true);
-
-                Log.i("Alipay result:","====================================");
-                for(String key: result.keySet()) {
-                    Log.i("Alipay:key: ",key + " value: " + result.get(key));
-                }
-
-                Log.i("Alipay result:","====================================");
 
                 PayResult payResult = new PayResult(result);
                 /**
