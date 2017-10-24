@@ -29,7 +29,7 @@ public class Alipay extends CordovaPlugin {
             JSONObject arguments = args.getJSONObject(0);
             String orderInfo = arguments.getString("orderInfo");
             // SANDBOX
-            EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
+//            EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
             this.pay(orderInfo, callbackContext);
         } catch (JSONException e) {
             callbackContext.error(new JSONObject());
